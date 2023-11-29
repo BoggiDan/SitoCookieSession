@@ -78,10 +78,84 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
 
 
     <!-- Compilazione del form  -->
-    <form action="" method="POST">
-        <fieldset>
+    <form action="" method="POST" id="formLoginEffettuato">
+        <fieldset id="fieldsetLoginEffettuato">
             <legend>Scegli il biglietto che preferisci</legend>
+            <!-- <div id="#">
+                <label for="name">Nome: </label>
+                <input type="text" id="name" name="name" placeholder="Nome">
+            </div>
             <div id="#">
+                <label for="cognome">Cognome: </label>
+                <input type="text" id="cognome" name="cognome" placeholder="Cognome">
+            </div> -->
+            <p>
+                <label> Nome: </label>
+                <input type="text" id="fname" name="fname" placeholder="Nome" />
+
+                <label> Cognome: </label>
+                <input type="text" id="lname" name="lname" placeholder="Cognome" />
+                <br />
+            </p>
+
+            <p>
+                <label> Sesso: </label> <br />
+                <input type="radio" name="sesso" value="Maschio" required /> Maschio
+                <br />
+                <input type="radio" name="sesso" value="Femmina" required /> Femmina
+                <br>
+                <input type="radio" name="sesso" value="Altro" required /> Altro
+                <br>
+            </p>
+            <p>
+                <label> Email: </label>
+                <input type="email" id="email" name="email" placeholder="es. nome@email.com" required />
+            </p>
+
+            <p>
+                <label> Numero di telefono: </label>
+                <input type="text" id="telefono" name="telefono" placeholder="Cellulare" required />
+            </p>
+
+            <table>
+                <tr>
+                    <th id="campo1">Campo</th>
+                    <th id="campo2">Posto</th>
+                    <th id="campo3">Prezzo €</th>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="premiumA" name="ticket" value="premiumA"></td>
+                    <td id="campo2">PREMIUM A - FILA 1</td>
+                    <td id="campo3">€123.05</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="premiumAA" name="ticket" value="premiumAA"></td>
+                    <td id="campo2">PREMIUM A - FILA 2</td>
+                    <td id="campo3">€107.00</td>
+                </tr>
+
+                <!-- Modello -->
+                <tr>
+                    <td id="campo1"></td>
+                    <td id="campo2"></td>
+                    <td id="campo3"></td>
+                </tr>
+
+            </table>
+
+            <p id="invii">
+          <label>
+            <input type="reset" name="Rifai" value="Rifai" id="bottoneInvio"/>
+          </label>
+  
+          <label>
+            <input type="submit" name="Invia" value="Invia" id="bottoneInvio" formaction="prenotazione.php"/>
+          </label>
+        </p>
+
+            <!-- <div id="#">
                 <input type="radio" id="premiumA" name="ticket" value="premiumA">
                 <label for="premiumA">PREMIUM A - FILA 1 €123.05</label>
             </div>
@@ -168,10 +242,10 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
             <div id="#">
                 <input type="radio" id="tribunaGuest" name="ticket" value="tribunaGuest">
                 <label for="tribunaGuest">TRIBUNA GUEST €15.10</label>
-            </div>
+            </div>-->
             <div id="UserInfo">
-            <input type="submit" class="button" name="logout" value="Logout">
-        </div>
+                <input type="submit" class="button" name="logout" value="Logout">
+            </div>
         </fieldset>
     </form>
 

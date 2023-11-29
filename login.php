@@ -11,6 +11,21 @@ if (isset($_POST["submit"])) { //premuto invio
 }
 ?>
 
+<?php
+$cookie_name = "utente";
+$cookie_value = "daniele";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // scrive cookie, dando un mese come tempo di vita
+?>
+<?php
+if (!isset($_COOKIE[$cookie_name])) {
+    // echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+
+    // echo "Cookie '" . $cookie_name . "' is set!<br>";
+    // echo "Value is: " . $_COOKIE[$cookie_name]; //legge il cookie
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,15 +62,15 @@ if (isset($_POST["submit"])) { //premuto invio
     <div id="immSfondoLogin">
         <div id="login">
             <?php if (isset($error)) echo "<p style=\"color: #F00;\">" . $error . "</p>" ?>
-            <p class="titlePrenotazione">
+            <p class="titlePrenotazioneLogin">
                 LOGIN
             </p>
             <form action="" method="POST" id="accesso">
-                <fieldset>
+                <fieldset id="fieldsetLogin">
                     <!-- <legend>Login</legend> -->
-                    <p>Username: <input type="text" name="username"></p>
-                    <p>Password: <input type="password" name="password"></p>
-                    <input type="submit" class="button" name="submit" value="Accedi">
+                    <p id="campiLogin">Username: <input type="text" name="username" value="<?=$_COOKIE['utente'] ?>"> </p>
+                    <p id="campiLogin">Password: <input type="password" name="password"></p>
+                    <input type="submit" class="button" name="submit" value="Accedi" id="bottoneAccedi">
                 </fieldset>
             </form>
         </div>
