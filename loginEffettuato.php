@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_POST["logout"])) unset($_SESSION["active_login"]); //se attivo il logout (bottone sotto) chiudi la sessione
-if (!isset($_SESSION["active_login"])) header("Location: login.php"); // se non è stata attivata la sessione torna alla pagina precedente
+if (!isset($_SESSION["active_login"])) header("Location: index.php"); // se non è stata attivata la sessione torna alla pagina precedente
 $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
 ?>
 <!DOCTYPE html>
@@ -38,11 +38,14 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
     <div id="pulsante1"></div>
 
     <!-- Introduzione: descrizione di quello ceh dovrà fare l'utente -->
-    <div id="#">
+    <div id="testoPerForm">
         <?php
         $prova = <<<HTML
+                <p id="benvenuto">
                 Benvenuto $user. <br>
-                In questa sezione lei dovrà compilare il modulo sottostante per prenotare il posto desiderato
+                </p>
+                In questa sezione lei dovrà compilare il modulo sottostante per prenotare il posto desiderato. <br>
+                Immergiti nell'emozione del basket come mai prima d'ora! Acquista il tuo biglietto ora e preparati a vivere l'azione mozzafiato, la competizione accesa e l'incredibile atmosfera di una partita che ti terrà con il fiato sospeso. Non perdere l'opportunità di essere parte di questo spettacolo sportivo straordinario! 🏀✨
             HTML;
         echo $prova;
         ?>
@@ -80,7 +83,7 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
     <!-- Compilazione del form  -->
     <form action="" method="POST" id="formLoginEffettuato">
         <fieldset id="fieldsetLoginEffettuato">
-            <legend>Scegli il biglietto che preferisci</legend>
+            <legend>Inserisci i seguenti dati</legend>
             <!-- <div id="#">
                 <label for="name">Nome: </label>
                 <input type="text" id="name" name="name" placeholder="Nome">
@@ -89,71 +92,175 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
                 <label for="cognome">Cognome: </label>
                 <input type="text" id="cognome" name="cognome" placeholder="Cognome">
             </div> -->
-            <p>
+            <p class="campiDaCompilare">
                 <label> Nome: </label>
-                <input type="text" id="fname" name="fname" placeholder="Nome" />
-
+                <input type="text" id="fname" name="fname" placeholder="Nome" required/>
+            </p>
+            <p class="campiDaCompilare">
                 <label> Cognome: </label>
                 <input type="text" id="lname" name="lname" placeholder="Cognome" />
                 <br />
             </p>
-
-            <p>
-                <label> Sesso: </label> <br />
-                <input type="radio" name="sesso" value="Maschio" required /> Maschio
-                <br />
-                <input type="radio" name="sesso" value="Femmina" required /> Femmina
-                <br>
-                <input type="radio" name="sesso" value="Altro" required /> Altro
-                <br>
-            </p>
-            <p>
+            <p class="campiDaCompilare">
                 <label> Email: </label>
-                <input type="email" id="email" name="email" placeholder="es. nome@email.com" required />
+                <input type="email" id="email" name="email" placeholder="es. nome@email.com" />
             </p>
 
-            <p>
+            <p class="campiDaCompilare">
                 <label> Numero di telefono: </label>
-                <input type="text" id="telefono" name="telefono" placeholder="Cellulare" required />
+                <input type="text" id="telefono" name="telefono" placeholder="Cellulare" />
             </p>
 
             <table>
                 <tr>
                     <th id="campo1">Campo</th>
                     <th id="campo2">Posto</th>
-                    <th id="campo3">Prezzo €</th>
+                    <th id="campo3">Prezzo</th>
                 </tr>
 
                 <tr>
-                    <td id="campo1"><input type="radio" id="premiumA" name="ticket" value="premiumA"></td>
+                    <td id="campo1"><input type="radio" id="premiumA" name="ticket" value="PREMIUM A - FILA 1"></td>
                     <td id="campo2">PREMIUM A - FILA 1</td>
-                    <td id="campo3">€123.05</td>
+                    <td id="campo3"> €123.05 </td>
                 </tr>
 
                 <tr>
-                    <td id="campo1"><input type="radio" id="premiumAA" name="ticket" value="premiumAA"></td>
+                    <td id="campo1"><input type="radio" id="premiumAA" name="ticket" value="PREMIUM A - FILA 2"></td>
                     <td id="campo2">PREMIUM A - FILA 2</td>
                     <td id="campo3">€107.00</td>
                 </tr>
 
                 <!-- Modello -->
                 <tr>
-                    <td id="campo1"></td>
-                    <td id="campo2"></td>
-                    <td id="campo3"></td>
+                    <td id="campo1"> <input type="radio" id="premiumB" name="ticket" value="PREMIUM B - FILA 1"> </td>
+                    <td id="campo2">PREMIUM B - FILA 1</td>
+                    <td id="campo3">€80.25</td>
                 </tr>
 
+                <tr>
+                    <td id="campo1"> <input type="radio" id="premiumBB" name="ticket" value="PREMIUM B - FILA 2"> </td>
+                    <td id="campo2">PREMIUM B - FILA 2</td>
+                    <td id="campo3">€63.13</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"> <input type="radio" id="corporate" name="ticket" value="CORPORATE"> </td>
+                    <td id="campo2">CORPORATE</td>
+                    <td id="campo3">€96.30</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="executive" name="ticket" value="EXECUTIVE"></td>
+                    <td id="campo2">EXECUTIVE</td>
+                    <td id="campo3">€85.60</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="benchSideCentrale" name="ticket" value="BENCH SIDE CENTRALE"></td>
+                    <td id="campo2">BENCH SIDE CENTRALE</td>
+                    <td id="campo3">€57.78</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="benchSide" name="ticket" value="BENCH SIDE"></td>
+                    <td id="campo2">BENCH SIDE</td>
+                    <td id="campo3">€50.29</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="vipSeats" name="ticket" value="VIP SEATS"></td>
+                    <td id="campo2">VIP SEATS</td>
+                    <td id="campo3">€101.65</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="lodgeCentrale" name="ticket" value="LODGE CENTRALE"></td>
+                    <td id="campo2">LODGE CENTRALE</td>
+                    <td id="campo3">€32.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="tribunaCentrale" name="ticket" value="TRIBUNA CENTRALE"> </td>
+                    <td id="campo2">TRIBUNA CENTRALE</td>
+                    <td id="campo3">€26.75</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="lodge" name="ticket" value="LODGE"></td>
+                    <td id="campo2">LODGE</td>
+                    <td id="campo3">€20.33</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="promotion" name="ticket" value="PROMOTION"></td>
+                    <td id="campo2">PROMOTION</td>
+                    <td id="campo3">€15.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="stageCentrale" name="ticket" value="STAGE CENTRALE"></td>
+                    <td id="campo2">STAGE CENTRALE</td>
+                    <td id="campo3">€13.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="lodgeLaterale" name="ticket" value="LODGE LATERALE"></td>
+                    <td id="campo2">LODGE LATERALE</td>
+                    <td id="campo3">€12.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="stage" name="ticket" value="STAGE"></td>
+                    <td id="campo2">STAGE</td>
+                    <td id="campo3">€11.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="lodgeDiagonale" name="ticket" value="LODGE DIAGONALE"></td>
+                    <td id="campo2">LODGE DIAGONALE</td>
+                    <td id="campo3">€11.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="stageLaterale" name="ticket" value="STAGE LATERALE"></td>
+                    <td id="campo2">STAGE LATERALE</td>
+                    <td id="campo3">€10.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="fanZone" name="ticket" value="FAN ZONE"></td>
+                    <td id="campo2">FAN ZONE</td>
+                    <td id="campo3">€11.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="tribunaOlimpia" name="ticket" value="TRIBUNA OLIMPIA"></td>
+                    <td id="campo2">TRIBUNA OLIMPIA</td>
+                    <td id="campo3">€9.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="curvaAjp" name="ticket" value="CURVA AJP"></td>
+                    <td id="campo2">CURVA AJP</td>
+                    <td id="campo3">€9.10</td>
+                </tr>
+
+                <tr>
+                    <td id="campo1"><input type="radio" id="tribunaGuest" name="ticket" value="TRIBUNA GUEST"></td>
+                    <td id="campo2">TRIBUNA GUEST</td>
+                    <td id="campo3">€15.10</td>
+                </tr>
             </table>
 
             <p id="invii">
-          <label>
-            <input type="reset" name="Rifai" value="Rifai" id="bottoneInvio"/>
-          </label>
-  
-          <label>
-            <input type="submit" name="Invia" value="Invia" id="bottoneInvio" formaction="prenotazione.php"/>
-          </label>
-        </p>
+                <label>
+                    <input type="reset" name="Rifai" value="Rifai" id="bottoneInvio" />
+                </label>
+
+                <label>
+                    <input type="submit" name="Invia" value="Invia" id="bottoneInvio" formaction="conferma.php" />
+                </label>
+            </p>
 
             <!-- <div id="#">
                 <input type="radio" id="premiumA" name="ticket" value="premiumA">
@@ -243,10 +350,10 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
                 <input type="radio" id="tribunaGuest" name="ticket" value="tribunaGuest">
                 <label for="tribunaGuest">TRIBUNA GUEST €15.10</label>
             </div>-->
-            <div id="UserInfo">
-                <input type="submit" class="button" name="logout" value="Logout">
-            </div>
         </fieldset>
+    </form>
+    <form action="" method="post" id="UserInfo">
+                <input type="submit" id="logout" name="logout" value="Logout">
     </form>
 
     <footer id="footer">

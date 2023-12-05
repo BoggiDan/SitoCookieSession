@@ -1,3 +1,18 @@
+<?php
+session_start();
+if (isset($_POST["logout"])) unset($_SESSION["active_login"]);
+if (!isset($_SESSION["active_login"])) header("Location: login.php");
+$user = $_SESSION["active_login"];
+
+if (isset($_POST['Invia'])) {
+  $nome = $_SESSION['nome'];
+  $cognome = $_SESSION['cognome'];
+  $ticket = $_SESSION['ticket'];
+  $to = $_SESSION['email'];
+  $telefono = $_SESSION['telefono'];
+  $prezzo = $_SESSION['prezzo'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,24 +24,36 @@
 
 <body>
   <?php
-  $n = $_POST['fname'];
-  $c = $_POST['lname'];
-  $s = $_POST['sesso'];
-//   $nPersone = $_POST['nPersone'];
-  $to = $_POST['email'];
-  $from = "ristoranteoasi@gmail.com";
-//   $date = $_POST['date'];
-//   $ora = $_POST['time'];
-  $telefono = $_POST['telefono'];
-  $subject = "Prenotazione Ristorante Oasi";
+  // $n = $_POST['fname'];
+  // $c = $_POST['lname'];
+  // $s = $_POST['sesso'];
+  // $ticket = $_POST['ticket'];
+  // $prezzo = $_POST['prezzo'];
+  //   $nPersone = $_POST['nPersone'];
+  // $to = $_POST['email'];
+  $from = "daniele.boggian@iticopernico.it";
+  //   $date = $_POST['date'];
+  //   $ora = $_POST['time'];
+  // $telefono = $_POST['telefono'];
+  $subject = "Ordine Ticket";
   $message = <<<HTML
-    Salve, la sua prenotazione presso il Ristorante Oasi è stata confermata con successo.
+    Salve, la sua prenotazione presso il Mediolanum Forum è stata confermata con successo.
     Di seguito i suoi dati inseriti al momento della prenotazione: 
-    Nome: $n
-    Cognome: $c
-    Email: $to
-    Telefono: $telefono 
+    Nome: $nome
+    Cognome: $cognome
+    Posto in tribuna: $ticket
+    Costo: $prezzo
+    Telefono: $telefono
   HTML;
+
+// Always set content-type when sending HTML email
+// $headers = "MIME-Version: 1.0" . "\r\n";
+// $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+// $headers .= 'From: <enquiry@example.com>' . "\r\n";
+// $headers .= 'Cc: myboss@example.com' . "\r\n";
+
 
   // $headers = "MIME-Version: 1.0" . "\r\n";
   // $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";

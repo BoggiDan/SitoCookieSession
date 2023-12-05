@@ -1,10 +1,14 @@
+<!-- Utente: Daniele
+password: 1234 -->
+
 <?php
 session_start();
+// var_dump($_SESSION);
 if (isset($_SESSION["active_login"])) header("Location: loginEffettuato.php"); // sessione già convalidata
 if (isset($_POST["submit"])) { //premuto invio
     $user = $_POST["username"];
     $psw = $_POST["password"];
-    if ($user == "daniele" && $psw == "boggian") { //coincidono user e pwd
+    if ($user == "Daniele" && $psw == "1234") { //coincidono user e pwd
         $_SESSION["active_login"] = $user; // memorizzo e attivo la sessione utente
         header("Location: loginEffettuato.php"); //invio alla pagina di elaborazione
     } else $error = "Username o password errati!";
@@ -12,8 +16,9 @@ if (isset($_POST["submit"])) { //premuto invio
 ?>
 
 <?php
+// $_SESSION['utente'] = "";
 $cookie_name = "utente";
-$cookie_value = "daniele";
+$cookie_value = "Daniele";
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // scrive cookie, dando un mese come tempo di vita
 ?>
 <?php

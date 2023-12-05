@@ -55,17 +55,18 @@
         tracciato un percorso epico nell'universo della pallacanestro italiana
         ed europea. Le mura della loro casa, il celebre Mediolanum Forum,
         raccontano storie di vittorie gloriose e di sfide emozionanti,
-        dipingendo un quadro straordinario di determinazione e successo. I
-        giocatori della squadra, con il cuore pulsante dietro il famoso logo
+        dipingendo un quadro straordinario di determinazione e successo. <br>
+        I giocatori della squadra, con il cuore pulsante dietro il famoso logo
         dell'aquila, incarnano l'essenza di Milano: grinta, stile e passione. Le
         partite della Società Olimpia Milano non sono solo eventi sportivi, ma
         veri spettacoli di adrenalina e talento. Ogni canestro, ogni dribbling,
-        è un'ode all'arte della pallacanestro, eseguita con maestria e grazia.
+        è un'ode all'arte della pallacanestro, eseguita con maestria e grazia. <br>
         La folla, un'onda di tifosi appassionati, riempie il Mediolanum Forum
         con un coro di sostegno vibrante, creando un'atmosfera che va ben oltre
         il campo da gioco. I momenti epici vissuti durante le partite della
         Società Olimpia Milano non sono solo memorie sportive, ma capitoli
-        indelebili nella storia della città. Invitiamo tutti gli appassionati di
+        indelebili nella storia della città. <br>
+        Invitiamo tutti gli appassionati di
         sport, gli amanti dell'emozione e coloro che cercano un'esperienza unica
         a unirsi a noi al Mediolanum Forum, dove il presente si fonde con la
         storia e il futuro si scrive con ogni canestro segnato. La Società
