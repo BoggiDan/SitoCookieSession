@@ -91,11 +91,17 @@ if (!isset($_COOKIE[$cookie_name])) {
 
 
 
-    <footer id="footer">
-        Autore: Boggian Daniele <br />
-        Classe: 5G <br />
-        Copyright by Boggian Daniele <br />
-    </footer>
+    <!-- footer -->
+    <div class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <p class="copyright">Copyright by Boggian Daniele</p>
+    </div>
 </body>
 
 </html>

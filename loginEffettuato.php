@@ -98,17 +98,17 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
             </p>
             <p class="campiDaCompilare">
                 <label> Cognome: </label>
-                <input type="text" id="lname" name="lname" placeholder="Cognome" />
+                <input type="text" id="lname" name="lname" placeholder="Cognome" required/>
                 <br />
             </p>
             <p class="campiDaCompilare">
                 <label> Email: </label>
-                <input type="email" id="email" name="email" placeholder="es. nome@email.com" />
+                <input type="email" id="email" name="email" placeholder="es. nome@email.com" required/>
             </p>
 
             <p class="campiDaCompilare">
                 <label> Numero di telefono: </label>
-                <input type="text" id="telefono" name="telefono" placeholder="Cellulare" />
+                <input type="text" id="telefono" name="telefono" placeholder="Cellulare" required   />
             </p>
 
             <table>
@@ -356,11 +356,17 @@ $user = $_SESSION["active_login"]; //assegna a $user il nome memorizzato
                 <input type="submit" id="logout" name="logout" value="Logout">
     </form>
 
-    <footer id="footer">
-        Autore: Boggian Daniele <br />
-        Classe: 5G <br />
-        Copyright by Boggian Daniele <br />
-    </footer>
+    <!-- footer -->
+    <div class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <p class="copyright">Copyright by Boggian Daniele</p>
+    </div>
 </body>
 
 </html>

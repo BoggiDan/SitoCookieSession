@@ -485,21 +485,82 @@ table {
 }
 
 /* Footer */
-footer {
+/* footer {
   position: relative;
   bottom: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* height: 100px; */
+  height: 100px;
   background-color: #eb3739;
   width: 100%;
-  /* margin-top: 30px; */
+  margin-top: 30px;
   text-align: center;
   font-style: italic;
   font-weight: bold;
   padding: 14px;
+  color: white;
+} */
+
+/* footer */
+  
+  
+.footer {
+  width: 100%;
+  padding: 25px 0;
+  /* background-color: #f1f1f1; */
+  background-color: black;
+}
+
+.footer .social {
+  text-align: center;
+  padding-bottom: 20px;
+  /* color: black; */
+  color: white;
+}
+
+.footer .social a {
+  font-size: 24px;
+  /* color: black; */
+  color: white;
+  border: 1px solid #ccc;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 16px;
+}
+
+.footer .social a:hover {
+  color: red;
+}
+
+.footer ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* .footer .scrittaSocial{
+  font-weight: 500;
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+} */
+
+.footer .copyright {
+  font-weight: 500;
+  /* margin-top: 10px; */
+  text-align: center;
+  font-size: 15px;
   color: white;
 }
 

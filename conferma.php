@@ -11,7 +11,7 @@ if (isset($_POST['Invia'])) {
     $ticket = $_POST['ticket'];
     $to = $_POST['email'];
     $telefono = $_POST['telefono'];
-    $prezzo = $_POST['prezzo'];
+    // $prezzo = $_POST['prezzo'];
 }
 ?>
 
@@ -26,6 +26,7 @@ if (isset($_POST['Invia'])) {
 
     <!-- Per le icone (menu hamburger e X nel responsive)-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
     <title>Conferma</title>
 </head>
 
@@ -152,7 +153,7 @@ if (isset($_POST['Invia'])) {
 
             $_SESSION['nome'] = $nome;
             $_SESSION['cognome'] = $cognome;
-            $_SESSION['ticket']= $ticket;
+            $_SESSION['ticket'] = $ticket;
             $_SESSION['email'] = $to;
             $_SESSION['telefono'] = $telefono;
             $_SESSION['prezzo'] = $prezzo;
@@ -209,11 +210,23 @@ if (isset($_POST['Invia'])) {
     dando all'utente la possibilità di tornare indietro alla pagina precedente (loginEffettuato.php),
     oppure con un bottone invia dove ti rimanda alla home e ti invia la mail  -->
 
-    <footer id="footer">
+    <!-- <footer id="footer">
         Autore: Boggian Daniele <br />
         Classe: 5G <br />
         Copyright by Boggian Daniele <br />
-    </footer>
+    </footer> -->
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-snapchat"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <p class="copyright">Copyright by Boggian Daniele</p>
+    </div>
 </body>
 
 </html>

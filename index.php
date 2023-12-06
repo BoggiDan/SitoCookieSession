@@ -93,15 +93,28 @@
     HTML;
 
 
-  echo <<<HTML
-      <footer id = "footer">
-        Autore: Boggian Daniele <br />
-        Classe: 5G <br />
-        Copyright by Boggian Daniele <br />
-      </footer>
+  // echo <<<HTML
+  //     <footer id = "footer">
+  //       Autore: Boggian Daniele <br />
+  //       Classe: 5G <br />
+  //       Copyright by Boggian Daniele <br />
+  //     </footer>
+  //   HTML;
+  // 
+
+    echo <<<HTML
+    <div class="footer">
+    <!-- <p class="scrittaSocial">Social</p> -->
+      <div class="social">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-snapchat"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+      <p class="copyright">Copyright by Boggian Daniele</p>
+      </div>
     HTML;
   ?>
-
 
 </body>
 
