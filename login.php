@@ -66,10 +66,10 @@ if (!isset($_COOKIE[$cookie_name])) {
 
     <div id="immSfondoLogin">
         <div id="login">
-            <?php if (isset($error)) echo "<p style=\"color: #F00;\">" . $error . "</p>" ?>
             <p class="titlePrenotazioneLogin">
                 LOGIN
             </p>
+            <?= isset($error)? "<p style=\"color: #F00;\">" . $error . "</p>":"" ?>
             <form action="" method="POST" id="accesso">
                 <fieldset id="fieldsetLogin">
                     <!-- <legend>Login</legend> -->

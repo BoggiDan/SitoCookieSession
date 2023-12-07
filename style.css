@@ -242,7 +242,8 @@ body {
 
 #login {
   width: 25%;
-  height: 40%;
+  /* height: 40%; */
+  padding-top: 10px;
   display: grid;
   place-items: center;
   background-color: rgba(255, 255, 255, 0.5);
@@ -269,6 +270,33 @@ form {
   align-items: center;
 }
 
+#login {
+  -webkit-box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.5);
+}
+
+#login #fieldsetLogin{
+  padding: 10px;
+}
+
+#login input[type=submit] {
+  background-color: red;
+  border-radius: 5px;
+  padding: 12px 25px;
+  margin: 20px 5px;
+  border: 0;
+  cursor: pointer;
+  transition: 0.05s;
+  -webkit-box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 7px 2px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+#login input:hover[type=submit] {
+  transform: translateY(-3px);
+  color: black;
+}
+
 #fieldsetLogin {
   /* background-color: rgba(0, 0, 255, 0.327); */
   background-color: rgba(210, 209, 209, 0.9);
@@ -277,6 +305,8 @@ form {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  border: 0;
+  border-radius: 10px;
   /* margin-top: 2%; */
   /* display: flex;
   flex-direction: column;
@@ -285,11 +315,18 @@ form {
   align-items: center; */
 }
 
+
 #campiLogin {
   margin: 1%;
   font-size: large;
   font-style: italic;
   /* font-weight: ; */
+}
+
+#campiLogin input{
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
 }
 
 /*LoginEffettuato*/
@@ -337,7 +374,7 @@ table {
 #immSfondoConferma {
   /* background: url("insieme.jpg") no-repeat ; */
   /* background-color: black; */
-  background: linear-gradient(white, black);
+  /* background: linear-gradient(white, black); */
   width: 100%;
   /* height: 100vh; */
   min-height: 70vh;
@@ -350,7 +387,10 @@ table {
 }
 
 #backgroundConferma {
-  width: 70%;
+  width: 60%;
+  border: 1px solid black;
+  margin: 50px;
+  border-radius: 10px;
   /* color: white; */
   /* background-color: rgba(255, 255, 255, 0.5); */
 }
@@ -383,7 +423,7 @@ table {
   background-color: red;
   border-radius: 5px;
   padding: 15px 30px;
-  margin: 20px 5px;
+  margin: -20px 5px;
   border: 0;
   cursor: pointer;
   transition: 0.05s;
